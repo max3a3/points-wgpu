@@ -1,0 +1,20 @@
+index js added uniform
+        points.addUniform('scale', options.scale);
+        points.addUniform('depth', options.depth);
+
+it is gotten in frag.js
+
+params.scale
+
+
+in the resulting shader
+struct Params {
+	scale:f32,
+	depth:f32,
+	time:f32,
+	delta:f32,
+	epoch:f32,
+	screen:vec2f,
+
+
+@group(0) @binding(0) var <uniform> params: Params;

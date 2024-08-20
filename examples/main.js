@@ -1,4 +1,6 @@
 'use strict';
+
+// import depend on the import map in index.html
 import * as dat from 'datgui';
 import Points from 'points';
 import ShaderType from 'shadertype';
@@ -93,6 +95,8 @@ const shaderProjects = [
     // { name: 'PARAMS TEST', path: './params_test/index.js', uri:'params_test' },
     // { name: 'WebGPU Particles 1', path: './webgpu_particles_1/index.js', uri:'webgpu_particles_1' },
 ]
+
+shaderProjects.unshift(    { name: 'Render Passes 2', path: './renderpasses2/index.js', uri: 'renderpasses2' },)
 
 const shaderNames = {};
 shaderProjects.forEach((item, index) => {

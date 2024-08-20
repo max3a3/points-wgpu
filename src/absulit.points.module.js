@@ -1025,10 +1025,13 @@ export default class Points {
         let dynamicGroupBindingsCompute = '';
         let dynamicGroupBindingsFragment = '';
         let dynamicStructParams = '';
+
+        // create the field
         this.#uniforms.forEach(u => {
             u.type = u.type || 'f32';
             dynamicStructParams += /*wgsl*/`${u.name}:${u.type}, \n\t`;
         });
+        // enclose in struct
         if (this.#uniforms.length) {
             dynamicStructParams = /*wgsl*/`struct Params {\n\t${dynamicStructParams}\n}\n`;
         }
@@ -1833,6 +1836,7 @@ export default class Points {
                 //passEncoder.draw(3, 1, 0, 0);
                 passEncoder.draw(this.#vertexBufferInfo.vertexCount);
                 passEncoder.end();
+
                 // Copy the rendering results from the swapchain into |texture2d.texture|.
                 this.#textures2d.forEach(texture2d => {
                     if (texture2d.renderPassIndex == renderPassIndex || texture2d.renderPassIndex == null) {
@@ -1849,6 +1853,7 @@ export default class Points {
                         }
                     }
                 });
+
                 this.#texturesToCopy.forEach(texturePair => {
                     // console.log(texturePair.a);
                     // this.#createTextureToSize(texturePair.b, texturePair.a.width, texturePair.a.height);
@@ -1863,6 +1868,7 @@ export default class Points {
                     );
                 });
                 this.#texturesToCopy = [];
+
             }
         });
 

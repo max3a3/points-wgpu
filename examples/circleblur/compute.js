@@ -9,6 +9,8 @@ const workgroupSize = 1;
 //'function', 'private', 'push_constant', 'storage', 'uniform', 'workgroup'
 
 @compute @workgroup_size(workgroupSize,workgroupSize,1)
+
+// main has parameter based on compute in client, it uses x y z
 fn main(
     @builtin(global_invocation_id) GlobalId: vec3<u32>,
     @builtin(workgroup_id) WorkGroupID: vec3<u32>,
