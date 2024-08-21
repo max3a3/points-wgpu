@@ -16,8 +16,9 @@ const dithering1 = {
         }
         points.addSampler('feedbackSampler', descriptor);
         // await points.addTextureImage('image', './../img/carmen_lyra_423x643.jpg');
-        // await points.addTextureImage('image', './../img/old_king_600x600.jpg');
-        await points.addTextureImage('image', './../img/absulit_800x800.jpg');
+        //  await points.addTextureImage('image', './../img/old_king_600x600.jpg');
+        //await points.addTextureImage('image', './../img/absulit_800x800.jpg');
+        await points.addTextureImage('image', './../img/houses.jpg');
 
         points.addUniform('scale', options.scale);
         points.addUniform('depth', options.depth);
